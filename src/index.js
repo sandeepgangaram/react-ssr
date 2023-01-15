@@ -9,7 +9,17 @@ app.use(express.static("public"));
 
 app.get("/", (req, res) => {
   const content = renderToString(<Home />);
-  res.send(content);
+
+  const html = `
+  <html>
+  <head></head>
+  <body>
+    ${content}
+    <script src="bundle.js"></script>
+  </body>
+  </html>
+  `;
+  res.send(html);
 });
 
 app.listen(3000, () => {
