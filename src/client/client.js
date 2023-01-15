@@ -1,3 +1,7 @@
 // Starting point for our client application
 
-console.log("Helloooooooo, from Client");
+import React from "react";
+import ReactDOM from "react-dom";
+import Home from "./components/Home";
+
+ReactDOM.render(<Home />, document.getElementById("root"));
